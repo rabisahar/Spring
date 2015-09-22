@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-<div id="main">
+<div class="contentwrapper">
+<div class="main-content">
 			<div id="content">
 				<div id="content-top"></div><!-- content-top //do not touch -->
 				<div id="content-area">
@@ -26,6 +27,8 @@
 				</div><!-- content-area -->
 				<div id="content-bottom"></div><!-- content-bottom //do not touch -->
 			</div>  <!-- content -->
-<?php get_sidebar(); ?>
+
 		</div><!-- main -->
+<?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
