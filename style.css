@@ -781,9 +781,9 @@ h1.page-title {
  
 blockquote , q {
     display: block;
-    color: #D75640;
+    color: #bbdc39;
     padding: 25px 25px 15px 25px;
-    border: 4px dashed #D75640;
+    border: 4px #bbdc39 dashed ;
     font-style: italic;
     font-size: 14px !important;
 	margin:10px;
