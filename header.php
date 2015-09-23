@@ -70,25 +70,28 @@
 <div id="wrapper" class="main-container">
 <header>
 	<div class="headerinner">
-		<div class="main-left-nav">
-			<ul>
-				<li>
-					<a href="">
-						Contact Us
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div id="imagewrapper">
-			<div id="logo">
-			</div>
-		</div>
 		<?php
 		if(is_active_sidebar('topleft-sidebar'))
 		{
 			dynamic_sidebar('topleft-sidebar');
-		} 
+		} else {
 		?>
+		<div class="main-left-nav">
+					<ul>
+						<li><a href="">Contact Us</a></li>
+					</ul>
+		</div>
+		<?php 	
+		}
+		?>
+		<div id="imagewrapper">
+			<div id="logo">
+			</div>
+		</div>
+		<ul class="main-right-nav">
+					<li><a href="">Heads Blog</a></li>
+					<li><a href="">Staff Email</a></li>
+				</ul>
 		<ul class="mobile-nav">
 			<li>
 				<a href="">
