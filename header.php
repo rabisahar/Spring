@@ -88,10 +88,21 @@
 			<div id="logo">
 			</div>
 		</div>
-		<ul class="main-right-nav">
-					<li><a href="">Heads Blog</a></li>
-					<li><a href="">Staff Email</a></li>
-				</ul>
+		<?php
+		if(is_active_sidebar('topright-sidebar'))
+		{
+			dynamic_sidebar('topright-sidebar');
+		} else {
+		?>
+		<div class="main-right-nav">
+					<ul>
+						<li><a href="">Heads Blog</a></li>
+						<li><a href="">Staff Email</a></li>
+					</ul>
+		</div>
+		<?php 	
+		}
+		?>
 		<ul class="mobile-nav">
 			<li>
 				<a href="">
