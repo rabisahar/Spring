@@ -108,7 +108,33 @@ if ( function_exists('register_sidebar') )
 	'before_title' => '<h3>',
 	'after_title' => '</h3>',
 ));
-
+	register_sidebar(array(
+	'name' => __( 'Top Left Sidebar' ),
+  'id' => 'topleft-sidebar',
+  'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
+	'before_widget' => '<div class="widget-area">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
+));
+	register_sidebar(array(
+	'name' => __( 'Top Right Sidebar' ),
+  'id' => 'topright-sidebar',
+  'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
+	'before_widget' => '<div class="widget-area">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
+));
+	register_sidebar(array(
+	'name' => __( 'Top Right2 Sidebar' ),
+  'id' => 'topright2-sidebar',
+  'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
+	'before_widget' => '<div class="widget-area">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
+));
 add_theme_support( 'post-thumbnails' );
 
 	/* GET CUSTOM POST TYPE TAXONOMY LIST
