@@ -105,8 +105,8 @@ if ( function_exists('register_sidebar') )
   'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
 	'before_widget' => '<div class="widget-area">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3>',
-	'after_title' => '</h3>',
+	'before_title' => '<span>',
+	'after_title' => '</span>',
 ));
 	register_sidebar(array(
 	'name' => __( 'Top Left Sidebar' ),
@@ -114,8 +114,8 @@ if ( function_exists('register_sidebar') )
   'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
 	'before_widget' => '<div class="main-left-nav">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3>',
-	'after_title' => '</h3>',
+	'before_title' => '<span>',
+	'after_title' => '</span>',
 ));
 	register_sidebar(array(
 	'name' => __( 'Top Right Sidebar' ),
@@ -123,8 +123,8 @@ if ( function_exists('register_sidebar') )
   'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
 	'before_widget' => '<div class="main-right-nav">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3>',
-	'after_title' => '</h3>',
+	'before_title' => '<span>',
+	'after_title' => '</span>',
 ));
 	register_sidebar(array(
 	'name' => __( 'Top Right2 Sidebar' ),
@@ -132,8 +132,8 @@ if ( function_exists('register_sidebar') )
   'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
 	'before_widget' => '<div class="main-right-nav">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3>',
-	'after_title' => '</h3>',
+	'before_title' => '<span>',
+	'after_title' => '</span>',
 ));
 add_theme_support( 'post-thumbnails' );
 
