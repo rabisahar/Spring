@@ -98,7 +98,7 @@ P{
 	text-align: justify;
 }
 .main-content a:link, .main-content a:visited{
-	color: red;
+	color: black;
 	text-decoration: underline;
 }
 
@@ -278,7 +278,7 @@ div.left-nav ul.menu {
 }
 	
 div.left-nav  ul.menu  li   a:link, div.left-nav  ul.menu li a:visited{
-	color: white;
+	color: #BBDC39;
 	padding: 20px;
 	width: 100%;
 	text-align: center;

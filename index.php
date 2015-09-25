@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 <div class="contentwrapper">
 <div class="main-content">
+<?php if ((is_home()) OR (is_front_page()) AND (function_exists('putRevSlider'))){ ?>
+
+	<div id="slider-home">
+		<?php putRevSlider("home","homepage"); ?>
+	</div>
+<?php } ?>
 			<div id="content">
 				<div id="content-top"></div><!-- content-top //do not touch -->
 				<div id="content-area">
