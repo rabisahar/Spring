@@ -379,11 +379,11 @@ h3, h3 a {
 h4, h4 a {
 	color: <?php echo $h4_text_color; ?>;
 }
-.entry-meta.odd, .archive-meta.odd, .archive-title ,.archive-title a,.archive-title a:hover, .archive-title a:focus, .archive-title a:visited ,h1.entry-title, h1.entry-title a , h1.entry-title a:hover ,h1.entry-title a:visited, h1.entry-title a:focus ,h5, h5 a {
-	color: <?php echo $h5_text_color; ?> !important;
+ .archive-title ,.archive-title a,.archive-title a:hover, .archive-title a:focus, .archive-title a:visited ,h1.entry-title, h1.entry-title a , h1.entry-title a:hover ,h1.entry-title a:visited, h1.entry-title a:focus ,h5, h5 a {
+	color: #8129BC !important;
 }
 .archive-title.odd ,.archive-title.odd a,.archive-title.odd a:hover, .archive-title.odd a:focus, .archive-title.odd a:visited ,h1.entry-title.odd, h1.entry-title.odd a , h1.entry-title.odd a:hover ,h1.entry-title.odd a:visited, h1.entry-title.odd a:focus  {
-	color: <?php echo $h1_text_color; ?> !important;
+	color: #8129BC !important;
 }
 h6, h6 a {
 	color: <?php echo $h6_text_color; ?>;

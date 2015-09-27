@@ -18,13 +18,13 @@
 
 			<h1 class="page-title">
 <?php if ( is_day() ) : ?>
-				<?php printf( __( '<span style="font-size:40px">%s Archives:</span>', 'coope' ), get_the_date() ); ?>
+				<?php printf( __( '<span style="font-size:40px">%s :</span>', 'coope' ), get_the_date() ); ?>
 <?php elseif ( is_month() ) : ?>
-				<?php printf( __( '<span>%s</span> Archives: ','coope' ), get_the_date('F Y') ); ?>
+				<?php printf( __( '<span>%s</span> : ','coope' ), get_the_date('F Y') ); ?>
 <?php elseif ( is_year() ) : ?>
-				<?php printf( __( '<span>%s</span> Archives: ', 'coope' ), get_the_date('Y') ); ?>
+				<?php printf( __( '<span>%s</span> : ', 'coope' ), get_the_date('Y') ); ?>
 <?php else : ?>
-				<?php _e( 'Blog Archives', 'coope' ); ?>
+				<?php _e( 'Blog ', 'coope' ); ?>
 <?php endif; ?>
 			</h1> <br/>
 

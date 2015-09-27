@@ -6,7 +6,7 @@
 				<div id="content-area">
 <!-- Start the Loop. -->
 <h1 class="cat-title"><?php
-					printf( __( '%s Archives: ', 'coope' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					printf( __( '%s  ', 'coope' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 				?></h1><br/>
 				<?php
 					$category_description = category_description();

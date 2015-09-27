@@ -14,7 +14,8 @@ if( file_exists(THEME_PATH.'/theme-options.php') )
 
 	/* Dropdown menu support */
 	include(INCLUDES_PATH . '/plugins/dropdown-menus.php');
-
+	/* Rich Catagory Editor  support */
+	include(INCLUDES_PATH . '/plugins/richtags.php');
 /* Include page builder */
 	include(INCLUDES_PATH . '/page-builder/js_composer.php');
 
@@ -31,7 +32,7 @@ if( file_exists(THEME_PATH.'/theme-options.php') )
 	================================================== */
 		
 	function  load_styles() {  
- 	    wp_register_style('base-css', THEME_DIRECTORY_URI . '/css/base.css', array(), '1.0', 'screen');  
+ 	    //wp_register_style('base-css', THEME_DIRECTORY_URI . '/css/base.css', array(), '1.0', 'screen');  
 	    wp_register_style('logo-font-css', THEME_DIRECTORY_URI . '/css/logo-font.css', array(), '1.0', 'screen');
 		wp_register_style('main-css', THEME_DIRECTORY_URI . '/style.css', array(), '1.0', 'screen');  
 	    wp_register_style('custom-css', THEME_DIRECTORY_URI . '/css/custom-styles.css.php', array(), '1.0', 'screen');
@@ -103,7 +104,7 @@ if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => __( 'Top Left Sidebar' ),
   'id' => 'topleft-sidebar',
-  'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
+  'description' => __( 'Widgets in this area will be shown  in Header on the left-hand side of the Logo.' ),
 	'before_widget' => '<div class="main-left-nav">',
 	'after_widget' => '</div>',
 	'before_title' => '<span>',
@@ -112,13 +113,21 @@ if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => __( 'Top Right Sidebar' ),
   'id' => 'topright-sidebar',
-  'description' => __( 'Widgets in this area will be shown on the left-hand sidebar below Navigation.' ),
+  'description' => __( 'Widgets in this area will be shown in Header on the right-hand side of the Logo' ),
 	'before_widget' => '<div class="main-right-nav">',
 	'after_widget' => '</div>',
 	'before_title' => '<span>',
 	'after_title' => '</span>',
 ));
-
+	register_sidebar(array(
+	'name' => __( 'Top Mobile Only Sidebar' ),
+  'id' => 'mobiletop-sidebar',
+  'description' => __( 'Widgets in this area will be shown under logo in Mobile view Only.' ),
+	'before_widget' => '<div class="mobile-nav">',
+	'after_widget' => '</div>',
+	'before_title' => '<span>',
+	'after_title' => '</span>',
+));
 add_theme_support( 'post-thumbnails' );
 
 	/* GET CUSTOM POST TYPE TAXONOMY LIST
@@ -584,6 +593,69 @@ function coope_posted_home() {
 endif;
 
 function new_excerpt_more( $more ) {
-	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">[....] Read More > </a>';
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '"> read more... </a>';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+
+// CSS MENU for Mobiles
+
+class CSS_Menu_Walker extends Walker {
+
+  var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
+  
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul>\n";
+  }
+  
+  function end_lvl( &$output, $depth = 0, $args = array() ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "$indent</ul>\n";
+  }
+  
+  function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+  
+    global $wp_query;
+    $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    $class_names = $value = ''; 
+    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+    
+    /* Add active class */
+    if(in_array('current-menu-item', $classes)) {
+      $classes[] = 'active';
+      unset($classes['current-menu-item']);
+    }
+    
+    /* Check for children */
+    $children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' =>'_menu_item_menu_item_parent', 'meta_value' => $item->ID));
+    if (!empty($children)) {
+      $classes[] = 'has-sub';
+    }
+    
+    $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+    $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+    
+    $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+    $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+    
+    $output .= $indent . '<li' . $id . $value . $class_names .'>';
+    
+    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+    
+    $item_output = $args->before;
+    $item_output .= '<a'. $attributes .'><span>';
+    $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+    $item_output .= '</span></a>';
+    $item_output .= $args->after;
+    
+    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+  }
+  
+  function end_el( &$output, $item, $depth = 0, $args = array() ) {
+    $output .= "</li>\n";
+  }
+}  

@@ -106,8 +106,12 @@
 		<?php 	
 		}
 		?>
-		
-		<ul class="mobile-nav">
+		<?php
+		if(is_active_sidebar('mobiletop-sidebar'))
+		{
+			dynamic_sidebar('mobiletop-sidebar');
+		} else {
+		?><ul class="mobile-nav">
 			<li>
 				<a href="">
 					Contact Us
@@ -124,79 +128,16 @@
 				</a>
 			</li>
 		</ul>
-		<div class="drop-down-outer">
-			<div class="nav-drop-down">
-				Menu
-				<div class="arrowicon">
-					<i class="material-icons">
-						arrow_drop_down
-					</i>
-				</div>
-			</div>
-			<div class="nav-drop-down-container">
-				<ul class="">
-					<li>
-						<a href="" class="primary">
-							Primary Page
-						</a>
-					</li>
-					<li >
-						<a href="" class="secondary">
-							- Secondary Page
-						</a>
-					</li>
-					<li >
-						<a href="" class="secondary">
-							- Secondary Page
-						</a>
-					</li>
-					<li>
-						<a href=""  class="secondary">
-							- Secondary Page
-						</a>
-					</li>
-					<li>
-						<a href=""class="primary">
-							Primary Page
-						</a>
-					</li>
-					<li>
-						<a href="" class="secondary">
-							- Secondary Page
-						</a>
-					</li>
-					<li>
-						<a href="" class="tertiary">
-							-- Tertiary Page
-						</a>
-					</li>
-					<li>
-						<a href=""  class="secondary">
-							- Secondary Page
-						</a>
-					</li>
-					<li>
-						<a href=""  class="secondary">
-							- Secondary Page
-						</a>
-					</li>
-					<li>
-						<a href=""  class="tertiary">
-							-- Tertiary Page
-						</a>
-					</li>
-					<li>
-						<a href=""  class="tertiary">
-							-- Tertiary Page
-						</a>
-					</li>
-					<li>
-						<a href=""  class="primary">
-							Primary Page
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+		<?php 	
+		}
+		?>
+		
+<?php 
+  wp_nav_menu(array(
+    'menu' => 'mobilemenu', 
+    'container_id' => 'cssmenu', 
+    'walker' => new CSS_Menu_Walker()
+  )); 
+?> 
+</div>
 </header>
