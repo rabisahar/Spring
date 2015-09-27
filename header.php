@@ -70,31 +70,34 @@
 <div id="wrapper" class="main-container">
 <header>
 	<div class="headerinner">
+		
+		
 		<?php
 		if(is_active_sidebar('topleft-sidebar'))
 		{
 			dynamic_sidebar('topleft-sidebar');
 		} else {
-		?>
-		<div class="main-left-nav">
+		?><div class="main-left-nav">
 					<ul>
 						<li><a href="">Contact Us</a></li>
-					</ul>
+					</ul>	
 		</div>
 		<?php 	
 		}
 		?>
+		
 		<div id="imagewrapper">
 			<div id="logo">
 			</div>
 		</div>
+		
 		<?php
 		if(is_active_sidebar('topright-sidebar'))
 		{
 			dynamic_sidebar('topright-sidebar');
 		} else {
-		?>
-		<div class="main-right-nav">
+		?><div class="main-right-nav">
+		
 					<ul>
 						<li><a href="">Heads Blog</a></li>
 						<li><a href="">Staff Email</a></li>
@@ -103,6 +106,7 @@
 		<?php 	
 		}
 		?>
+		
 		<ul class="mobile-nav">
 			<li>
 				<a href="">

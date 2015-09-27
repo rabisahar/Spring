@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl.html
 
 */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}
+/* Custom CSS BEgins */
 .left-nav ul ul {
     margin: 0;
     padding: 0px 0px 0px 5px;
@@ -98,7 +98,7 @@ P{
 	text-align: justify;
 }
 .main-content a:link, .main-content a:visited{
-	color: black;
+	color: red;
 	text-decoration: underline;
 }
 
@@ -278,7 +278,7 @@ div.left-nav ul.menu {
 }
 	
 div.left-nav  ul.menu  li   a:link, div.left-nav  ul.menu li a:visited{
-	color: #BBDC39;
+	color: white;
 	padding: 20px;
 	width: 100%;
 	text-align: center;
@@ -294,7 +294,10 @@ div.left-nav  ul.menu  li a {
 div.left-nav  ul.sub-menu li a {
     background: #A1887F none repeat scroll 0% 0%;
 }
- 
+div.left-nav  ul.sub-menu li  ul  li a {
+    background: #BBA9A3 none repeat scroll 0% 0%;
+}
+  
 	
 .main-content{
 	float: right;
@@ -654,7 +657,7 @@ min-height:500px;
 
 #content-area {
      
-    padding: 5% 8.29%;
+    padding: 5% 5%;
     display: block;
     position: relative;
 }
@@ -777,14 +780,20 @@ h1.page-title {
     margin-bottom: 30px;
 }
 
- 
- 
+div.entry blockquote p {
+	 color: #bbdc39;
+	 margin:0;
+	 padding:0;
+}
+ #content-area blockquote p {
+    padding: 0px ;
+}
 blockquote , q {
     display: block;
     color: #bbdc39;
     padding: 25px 25px 15px 25px;
     border: 4px #bbdc39 dashed ;
-    font-style: italic;
     font-size: 14px !important;
+    font-style: italic;
 	margin:10px;
 }

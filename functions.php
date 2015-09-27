@@ -566,7 +566,22 @@ function coope_posted_on() {
 	echo '</span>';
 }
 endif;
-
+if ( ! function_exists( 'coope_posted_home' ) ) :
+/**
+ * Prints HTML with meta information for the current post—date/time and author.
+ */
+function coope_posted_home() {
+	echo '<span class="entry-date">Posted by  ';
+	the_author();
+	echo ' in ' ;
+		// Prints the string, replacing the placeholders.
+	echo get_the_category_list( ', ' );
+	 
+	echo ' on ' ;
+	the_time('jS F  Y');		
+	echo '</span>';
+}
+endif;
 
 function new_excerpt_more( $more ) {
 	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">[....] Read More > </a>';

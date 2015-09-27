@@ -110,11 +110,11 @@ if ($alt <> "even") {
 		<h1 class="entry-title  <?php echo $alt; ?>"  ><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'coope' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			<div class="entry-meta  <?php echo $alt; ?>"> 
 				<?php 
-					coope_posted_on(); 
+					coope_posted_home(); 
 				?>
 			</div><!-- .entry-meta -->
 <?php endif; ?>
-<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
+<?php if ( is_archive() || is_search() || is_front_page || is_home ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary  <?php echo $alt; ?>">
 				<?php  the_excerpt(); ?>
 			</div><!-- .entry-summary -->

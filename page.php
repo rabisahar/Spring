@@ -19,7 +19,7 @@
 		<h1 class="page-title"><?php the_title(); ?></h1> <!--  Page Title is set to Yes --> 
 		<?php }  ?>
 		
-		<?php	 get_template_part( 'framed-image'  );	?>
+ 
 		
 			<div class="entry">
 				<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
