@@ -386,7 +386,8 @@ div.left-nav  ul.sub-menu li  ul  li a
 }
 
 #sidebar div.left-nav ul.menu ul.sub-menu ul.sub-menu {
-	margin-top:-10px;
+	 margin-top:-10px;
+	 margin-bottom:10px; 
 }
  
 #sidebar div.left-nav ul.menu ul.sub-menu ul li:not(:last-child) a {
