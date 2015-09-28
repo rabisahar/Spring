@@ -131,8 +131,8 @@ if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => __( 'Left Sidebar' ),
   'id' => 'left-sidebar',
-  'description' => __( 'Widgets in this area will be shown under the left-hand side menu.' ),
-	'before_widget' => '<div class="widget-area">',
+  'description' => __( 'Widgets in this area will be shown under the top left sidebar.' ),
+	'before_widget' => '<div class="main-left-nav">',
 	'after_widget' => '</div>',
 	'before_title' => '<span>',
 	'after_title' => '</span>',

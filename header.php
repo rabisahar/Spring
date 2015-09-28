@@ -76,21 +76,18 @@
 		if(is_active_sidebar('topleft-sidebar'))
 		{
 			dynamic_sidebar('topleft-sidebar');
-		} else {
+		}
+		else {
 		?><div class="main-left-nav">
 					<ul>
 						<li><a href="">Contact Us</a></li>
 					</ul>	
 		</div>
-		<?php 	
+		<?php 		
 		}
 		?>
-		<?php
-		if(is_active_sidebar('left-sidebar'))
-		{
-			dynamic_sidebar('left-sidebar');
-		}
-		?>
+		
+	
 		
 		<div id="imagewrapper">
 			<div id="logo">
@@ -112,6 +109,14 @@
 		<?php 	
 		}
 		?>
+		
+		<?php
+		if(is_active_sidebar('left-sidebar'))
+		{
+			dynamic_sidebar('left-sidebar');
+		} 
+		?>
+		
 		<?php
 		if(is_active_sidebar('mobiletop-sidebar'))
 		{
