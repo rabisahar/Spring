@@ -50,15 +50,15 @@
 	$filter_rss_border_color = get_option('filter_rss_border_color', '#CCCCCC');
 	
 	// Body Styling
-	$body_text_color = get_option('body_color', '#000000');
+	$body_text_color = get_option('body_color', '#424242');
 	$link_text_color = get_option('link_color', '#d65644');
 	$h1_text_color = get_option('h1_color', '#512da8');
 	$h2_text_color = get_option('h2_color', '#3597d0');
-	$h3_text_color = get_option('h3_color', '#ff9900');
+	$h3_text_color = get_option('h3_color', '#3597D0');
 	$sidebar_h3_text_color = get_option('sidebar_h3_color', '#FFFFFF');
 	$h4_text_color = get_option('h4_color', '#7e57c2');
 	$h5_text_color = get_option('h5_color', '#7eb3d2');
-	$h6_text_color = get_option('h6_color', '#f3b860');
+	$h6_text_color = get_option('h6_color', '##86C1E3');
 	$menu_text_color = get_option('impact_text_color', '#FFFFFF');
 
 	// Shortcode Stying
@@ -143,7 +143,6 @@ h2 {
 	font-family: "<?php echo $heading_font; ?>",  Arial, serif;
 	font-size: <?php echo $h2_font_size; ?>px;
 	line-height: <?php echo $h2_font_line_height; ?>px;
-	   font-weight:900;
 	letter-spacing:0.017em;
  
 }
@@ -151,15 +150,13 @@ h3 {
 	font-family: "<?php echo $heading_font; ?>",  Arial, serif;
 	font-size: <?php echo $h3_font_size; ?>px;
 	line-height: <?php echo $h3_font_line_height; ?>px;
-	  
 	letter-spacing:0.017em;
  
 }
 h4 {
 	font-family: "<?php echo $heading_font; ?>",  Arial, serif;
 	font-size: <?php echo $h4_font_size; ?>px;
-	line-height: <?php echo $h4_font_line_height; ?>px;
- 
+ 	line-height: <?php echo $h4_font_line_height; ?>px;
 	letter-spacing:0.017em;
  
 }
@@ -174,8 +171,7 @@ h4 {
 h6 {
 	font-family: "<?php echo $heading_font; ?>",   Arial, serif;
 	font-size: <?php echo $h6_font_size; ?>px;
-	line-height: <?php echo $h6_font_line_height; ?>px;
- 
+ 	line-height: <?php echo $h6_font_line_height; ?>px;
 	letter-spacing:0.017em;
  
 }
