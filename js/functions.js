@@ -174,23 +174,28 @@ Custom jQuery functions.
 			jQuery(".menu li.parent").hoverIntent({
 				 over: function () {
 					jQuery(this).find('ul.sub-menu:first').css("display", "block");
-					var menuLeft = "10px";
+				 
 					if (jQuery(this).find('ul.sub-menu:first').parent().parent().hasClass("sub-menu")) {
-						menuLeft = jQuery(this).find('ul.sub-menu:first').parent().parent().outerWidth(true) - 2;
+					 
 					}
 					if (jQuery(this).parent().css("opacity") == 1) {
 						jQuery(this).find('ul.sub-menu:first').stop().animate({
-							"opacity": "1",
-							"left": menuLeft
+							"opacity": "1" 
 						}, 200);
+					 
 					}
+					
 			   	},
 				out: function () {
+				// find li with a class of current-menu-item
+					$currentnode = jQuery(this).find('li.current-menu-item');
+					if (!$currentnode.length){
 					jQuery(this).find('ul.sub-menu:first').stop().animate({
-						"opacity": "0",
-						"left": "-20px"
+						"opacity": "0" 
 					}, 200);
 					nav.hideNav(jQuery(this).find('ul.sub-menu:first'));
+					
+					}
 				}
 			});
 	

@@ -71,6 +71,7 @@ if( file_exists(THEME_PATH.'/theme-options.php') )
 	   wp_enqueue_script('viewjs');
 	   wp_enqueue_script('fitvids');
 	   wp_enqueue_script('respond');
+	    wp_enqueue_script('functions');	    
 	    wp_enqueue_script('main');	    
 	   
 	   
