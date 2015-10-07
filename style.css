@@ -2565,3 +2565,6 @@ div#footer-content ,#footer-content span, #footer-content a:visited,  #footer-co
   }
 
 }
+div.left-nav ul.menu .current-menu-item > a:first-child {
+	border-bottom: 2px dashed white;
+}
